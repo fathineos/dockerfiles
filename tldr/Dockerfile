@@ -1,0 +1,12 @@
+FROM python:3.4.5-alpine
+
+ENV TLDR_COLOR_BLANK="white"
+ENV TLDR_COLOR_NAME="cyan"
+ENV TLDR_COLOR_DESCRIPTION="white"
+ENV TLDR_COLOR_EXAMPLE="green"
+ENV TLDR_COLOR_COMMAND="red"
+ENV TLDR_COLOR_PARAMETER="white"
+
+RUN pip install tldr
+
+ENTRYPOINT ["tldr"]
