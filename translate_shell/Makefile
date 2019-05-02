@@ -3,3 +3,6 @@ container:
 
 example:
 	docker run --rm fathineos/translate-shell :fr word
+
+push:
+	docker push fathineos/translate-shell
