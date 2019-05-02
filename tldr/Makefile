@@ -2,4 +2,7 @@ container:
 	docker build -t fathineos/tldr .
 
 example:
-	docker run --rm fathineos/tldr ping
+	docker run -it --rm fathineos/tldr ping
+
+push:
+	docker push fathineos/tldr

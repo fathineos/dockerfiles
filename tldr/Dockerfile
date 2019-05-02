@@ -1,4 +1,4 @@
-FROM python:3.4.5-alpine
+FROM python:3.7.3-alpine3.9
 
 ENV TLDR_COLOR_BLANK="white"
 ENV TLDR_COLOR_NAME="cyan"
@@ -7,6 +7,6 @@ ENV TLDR_COLOR_EXAMPLE="green"
 ENV TLDR_COLOR_COMMAND="red"
 ENV TLDR_COLOR_PARAMETER="white"
 
-RUN pip install tldr
+RUN pip install --no-cache tldr
 
 ENTRYPOINT ["tldr"]
