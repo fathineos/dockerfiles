@@ -1,18 +1,17 @@
-FROM alpine:3.6
+FROM alpine:3.9
 
-RUN apk add --no-cache \
-    python2 \
+RUN apk add --no-cache --update \
     libevent \
-    libpq && \
-    apk add --no-cache --virtual .build-deps \
-    python2-dev \
-    postgresql-dev \
+    libpq \
+    python3 && \
+    apk add --no-cache --update --virtual .build-deps \
+    gcc \
     libevent-dev \
     musl-dev \
-    gcc && \
-    python -m ensurepip && \
-    pip install --upgrade pip && \
-    pip install pgcli && \
+    postgresql-dev \
+    py3-pip \
+    python3-dev && \
+    pip3 install --no-cache pgcli && \
     apk del .build-deps
 
 ADD entrypoint.sh /entrypoint.sh
