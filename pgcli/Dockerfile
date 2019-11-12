@@ -1,10 +1,11 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 RUN apk add --no-cache --update \
     libevent \
     libpq \
-    python3 && \
-    apk add --no-cache --update --virtual .build-deps \
+    python3
+
+RUN apk add --no-cache --update --virtual .build-deps \
     gcc \
     libevent-dev \
     musl-dev \
