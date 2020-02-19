@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.11
 
 RUN apk add --no-cache --update \
     libevent \
@@ -12,8 +12,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
     postgresql-dev \
     py3-pip \
     python3-dev && \
-    # pip3 install --no-cache pgcli && \
-    pip3 install -U https://github.com/dbcli/pgcli/archive/master.zip && \
+    pip3 install --no-cache pgcli==v2.2.0 && \
     apk del .build-deps
 
 ADD entrypoint.sh /entrypoint.sh
