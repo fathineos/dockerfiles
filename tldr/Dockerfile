@@ -1,4 +1,4 @@
-FROM python:3.8.0-alpine3.10
+FROM python:3.8-alpine3.11
 
 ENV TLDR_COLOR_BLANK="white"
 ENV TLDR_COLOR_NAME="cyan"
