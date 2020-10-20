@@ -1,12 +1,10 @@
-FROM alpine:3.9
+FROM alpine:3.12
 
-RUN apk add --no-cache --virtual tmp_deps wget && \
-    # add dependencies
-    apk add bash gawk openssl && \
-    # https://github.com/soimort/translate-shell
+RUN apk add --update --no-cache gawk bash openssl
+
+RUN apk add --update --no-cache --virtual build_deps wget && \
     wget https://raw.githubusercontent.com/soimort/translate-shell/gh-pages/trans && \
-    # remove unnecessary packages for runtime
-    apk del tmp_deps && \
+    apk del build_deps && \
     chmod +x trans && \
     mv trans /bin/trans
 

@@ -1,4 +1,4 @@
-container:
+build:
 	docker build -t fathineos/glances .
 
 example:

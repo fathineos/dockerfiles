@@ -12,7 +12,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
     postgresql-dev \
     py3-pip \
     python3-dev && \
-    pip3 install --no-cache pgcli==v2.2.0 && \
+    pip3 install --no-cache pgcli==v3.0.0 && \
     apk del .build-deps
 
 ADD entrypoint.sh /entrypoint.sh
