@@ -1,19 +1,11 @@
-FROM alpine:3.11
+FROM alpine:3.16
 
 RUN apk add --no-cache --update \
-    libevent \
-    libpq \
-    python3
-
-RUN apk add --no-cache --update --virtual .build-deps \
-    gcc \
-    libevent-dev \
     musl-dev \
-    postgresql-dev \
+    postgresql \
     py3-pip \
-    python3-dev && \
-    pip3 install --no-cache pgcli==v3.0.0 && \
-    apk del .build-deps
+    python3 && \
+    pip3 install --no-cache pgcli==v3.5.0
 
 ADD entrypoint.sh /entrypoint.sh
 ADD config /root/.config/pgcli/config
