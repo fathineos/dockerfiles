@@ -1,4 +1,0 @@
-DataDirectory /tmp/tor
-HiddenServiceDir /hidden_service/
-Log notice stdout
-SOCKSPort 0.0.0.0:9095
